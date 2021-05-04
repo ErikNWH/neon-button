@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Faster+One&display=swap");
 *,
-*:before,
-*:after {
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
@@ -23,7 +23,7 @@ body {
   border: #ff14bd 0.2em solid;
   padding: 0.45em 1em;
   border-radius: 0.25em;
-  text-shadow: 0 0 0.5em white, 0 0 0.5em currentColor;
+  text-shadow: 0 0 0.125em white, 0 0 0.45em currentColor;
   box-shadow: inset 0 0 0.5em 0 #ff14bd, 0 0 0.5em 0 #ff14bd;
   position: relative;
 }
@@ -35,7 +35,7 @@ body {
   background: #ff14bd;
   top: 120%;
   left: 0;
-  width: 110%;
+  width: 100%;
   height: 100%;
   transform: perspective(1em) rotateX(40deg) scale(1, 0.35);
   filter: blur(1.5em);
@@ -46,14 +46,14 @@ body {
   content: "";
   position: absolute;
   top: 0;
+  bottom: 0;
   left: 0;
   right: 0;
-  bottom: 0;
-  box-shadow: 0 0 1em 0.5em #ff14bd;
+  box-shadow: 0 0 2em 0.5em #ff14bd;
   opacity: 0;
   background: #ff14bd;
   z-index: -1;
-  transition: opacity 0.2s linear;
+  transition: opacity 100ms linear;
 }
 
 .neon-button:hover, .neon-button:focus {
@@ -61,6 +61,6 @@ body {
   text-shadow: none;
 }
 
-.neon-button:hover::before, .neon-button:hover:focus:before, .neon-button:hover::after, .neon-button:hover:focus:after {
+.neon-button:hover::before, .neon-button:hover::after, .neon-button:focus::before, .neon-button:focus::after {
   opacity: 1;
 }
